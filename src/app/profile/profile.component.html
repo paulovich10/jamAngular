@@ -1,0 +1,36 @@
+<div class="container flex column">
+
+    <div class="fichaUsuario flex row centerHorizontal centerVertical">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjMM9PTlG4sB_GWtGAsi2vXN0-EAH6NuvVXYnOIqBA_o5Y_7RW">
+
+
+        <div class="flex column centerVertical centerHorizontal">
+            <p><strong>Nombre:</strong>Lola Ramirez</p>
+            <p><strong>Fecha de nacimiento:</strong>15/08/1981</p>
+            <p><strong>Email:</strong>Lola@gmail.com</p>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="localizacion flex row centerHorizontal centerVertical">
+
+        <div class="flex column locInputs">
+            <label>Punto de partida</label>
+            <input type="text" #inputPartida class="iPlaces">
+            <label>Punto de destino</label>
+            <input type="text" #inputDestino class="iPlaces">
+            <input type="submit" value="guardar en perfil">
+        </div>
+        <div #googleMap class="mapa">
+
+        </div>
+    </div>
+
+
+
+</div>

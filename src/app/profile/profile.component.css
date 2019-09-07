@@ -1,0 +1,56 @@
+* {
+
+    font-family: Arial;
+}
+
+.flex {
+    display: flex;
+}
+.row {
+
+    flex-direction: row;
+}
+.column {
+
+    flex-direction: column;
+}
+
+.container div {
+
+    margin: 1%;
+}
+
+.fichaUsuario img {
+
+    width: 10%;
+}
+
+.mapa {
+    /* width: 400px; */
+    height: 350px;
+    width: 40%;
+    margin-left: 2%;
+}
+
+.centerVertical {
+    align-content: center;
+}
+
+.centerHorizontal {
+    justify-content: center;
+}
+
+.localizacion input {
+
+    width: 300px;
+    margin: 1em;
+    padding: .8rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 1em;
+
+}
+
+
+

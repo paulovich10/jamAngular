@@ -1,0 +1,305 @@
+
+h1 {
+
+   
+    font-size: 10em;
+    line-height: 1;
+    color: var(--gris);
+    margin-bottom: -20px;
+ 
+ }
+ 
+ /* h1 span {
+    
+    color: var(--gris);
+ 
+ } */
+ 
+ 
+ #hero {
+ 
+    height: 100vh;
+    /* position: relative; */
+    background: white url('../../assets/img/cabecera.jpg') no-repeat center / cover;
+ 
+ }
+ 
+ .cabecera {
+ 
+    font-family: 'Anton', sans-serif;
+    
+ 
+ }
+ 
+ .cabecera p {
+ 
+    font-size: 1.8em;
+ 
+ }
+ 
+ 
+ 
+
+ 
+ h3 {
+ 
+    text-align: center;
+    font-size: 5em;
+    color: var(--rojo);
+    font-family: 'Roboto', sans-serif;
+    
+ }
+ 
+ 
+ p {
+ 
+    line-height: 1.5;
+    font-size: 1.2em;
+    color: rgba(0,0,0,.8)
+ }
+ 
+ a {
+ 
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: black;
+ }
+ 
+ .boton {
+ 
+    font-size: .6em;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    background-color: (--gris);
+    width: 40%;
+    border-radius: 25px;
+    /* border: 2px solid var(--gris); */
+    transition: .5s;
+    
+    
+ }
+ 
+ .boton p {
+ 
+    font-size: 1.5em;
+    color: var(--gris);
+    transition: .5s;
+ }
+ 
+ .boton:hover {
+ 
+    cursor: pointer;
+    background-color: var(--gris);
+    
+ }
+ 
+ .boton:hover p {
+    color: white;
+ 
+    
+ }
+ 
+ 
+ 
+ /* .carril img {
+ 
+     width: 80px;
+ }
+ 
+ 
+ .carril.uno img:first-child{
+ 
+    position: absolute;
+     bottom: 120%;
+     left: 5%;
+     animation: moverUno 1.5s ease-out  normal forwards;
+  }
+  
+  .carril.uno img:nth-child(2){
+    position: absolute;
+     bottom: 120%;
+     left: 5%;
+     animation: moverDos 1.5s 1s ease-out normal forwards;
+  }
+  
+  .carril.uno img:nth-child(3){
+    position: absolute;
+     bottom: 120%;
+     left: 5%;
+     animation: moverTres 1.5s 2s ease-out normal forwards;
+  }
+  
+  .carril.uno img:nth-child(4){
+  
+    position: absolute;
+    bottom: 120%;
+     left: 5%;
+     animation: moverCuatro 1.5s 3s ease-out normal forwards;
+  }
+  
+  .carril.uno img:nth-child(5){
+    position: absolute;
+     bottom: 120%;
+     left: 5%;
+     animation: moverCinco 1.5s 4s ease-out normal forwards;
+  }
+  
+  .carril.dos img:first-child{
+  
+    position: absolute;
+     bottom: 120%;
+     left: 15%;
+     animation: moverUno 1.5s 2s ease-out normal forwards;
+  }
+  
+  .carril.dos img:nth-child(2){
+  
+    position: absolute;
+     bottom: 120%;
+     left: 15%;
+     width: 6%;
+     animation: moverDos 1.5s 3s ease-out  normal forwards;
+  }
+  
+  .carril.dos img:nth-child(3){
+  
+    position: absolute;
+     bottom: 120%;
+     left: 15%;
+     animation: moverTres 1.5s 4s ease-out normal forwards;
+  
+  }
+  
+  .carril.dos img:nth-child(4){
+  
+    position: absolute;
+     bottom: 120%;
+     left: 15%;
+     animation: moverCuatro 1.5s 5s ease-out normal forwards;
+  
+  }
+  
+  .carril.dos img:nth-child(5){
+    
+    position: absolute;
+     bottom: 120%;
+     left: 15%;
+     animation: moverCinco 1.5s 6s ease-out normal forwards;
+  
+  }
+  
+  @keyframes moverUno {
+  
+     from {
+  
+         bottom: 120%;
+         
+  
+     }
+  
+     to {
+  
+         bottom: 10%;
+     }
+  }
+  
+  @keyframes moverDos {
+  
+     from {
+  
+         bottom: 120%;
+     }
+  
+     to {
+  
+         bottom: 30%;
+     }
+  }
+  
+  @keyframes moverTres {
+  
+     from {
+  
+         bottom: 120%;
+     }
+  
+     to {
+  
+         bottom: 48%;
+     }
+  }
+  
+  @keyframes moverCuatro {
+  
+     from {
+  
+         bottom: 120%;
+     }
+  
+     to {
+  
+         bottom: 68%;
+     }
+  }
+  
+  @keyframes moverCinco {
+  
+     from {
+  
+         bottom: 120%;
+     }
+  
+     to {
+  
+         bottom: 90%;
+     }
+  }
+ 
+  #car {
+ 
+     position: fixed;
+     top: 81%;
+     left: 5%;
+     width: 80px;
+ } */
+ 
+  /*----intro-----*/
+ 
+ 
+ #intro {
+ 
+ 
+     padding-top: 150px;
+     padding-bottom: 150px;
+ }
+ 
+ .contenedorIntro {
+ 
+     width: 80%;
+     margin: 0 auto;
+     text-align: center;
+ }
+ 
+ .contenedorIntro div > div{
+ 
+     padding-top: 10%;
+     padding-left: 5%;
+     width: 75%;
+ }
+ 
+ 
+
+ 
+ 
+ 
+ /*----localizacion-----*/
+ 
+ #localizacion div {
+ 
+     margin: 7%;
+ }
+ 
+ 
+  
+  

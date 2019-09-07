@@ -1,0 +1,41 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+
+    padding-left: 2em;
+}
+
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    height: 70px;
+    
+   
+}
+
+a {
+
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    display: block;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-family: Arial;
+    letter-spacing: 1px;
+
+}
+
+a:hover {
+
+    color: tomato;
+    transition: .5s ease-out;
+}
+

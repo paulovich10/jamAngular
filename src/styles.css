@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body {
+
+   overflow-x: hidden;
+}
+
+:root {
+ 
+   --rojo : rgb(226, 62, 60);
+   --gris: rgb(34, 37, 42);
+   --azul:  rgb(1, 182, 193);
+}
+
+h2, p {
+ 
+   font-family: 'Roboto', sans-serif;
+   
+}
+
+h2 {
+
+   padding-bottom: .7em;
+   color: var(--azul);
+   font-size: 2em;
+}
+
+.flex {
+
+   display: flex;
+}
+
+.row {
+
+   flex-direction: row;
+}
+
+.column {
+
+   flex-direction: column;
+}
+
+.space-between {
+
+   justify-content: space-between;
+}
+.wrap {
+
+   flex-wrap: wrap;
+}
+
+.no-wrap {
+
+   flex-wrap: nowrap;
+}
+
+.center-horizontal {
+   
+   align-items: center;
+   align-content: center;
+
+}
+
+.center-vertical {
+
+   justify-content: center;
+}
+
+.center-start {
+
+   align-items: center;
+   justify-content: flex-start;
+
+}
+
+.end {
+
+   justify-content: flex-end;
+} 
+
