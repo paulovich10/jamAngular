@@ -26,10 +26,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.usuarioService.login(this.formulario.value)
+  
       .then(response => {
-        if (response['token']) {
+        
+       if (response['token'] && response['username']) {
+        console.log(response)
           localStorage.setItem('user-token', response['token']);
-          // localStorage.setItem('usuario', response['usuario'])
+          localStorage.setItem('username', JSON.stringify(response['username']));
           alert('usuario logado con éxito')
           this.router.navigate(['/home']);
         } else {

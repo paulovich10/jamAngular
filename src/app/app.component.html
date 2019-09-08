@@ -1,6 +1,12 @@
-<div class="contenedor flex row space-between">
-  <div *ngIf="usuarioService.isUserLogged()" class="flex center-horizontal">
+<div class="contenedor flex row end">
+  <div *ngIf="usuarioService.isUserLogged()" class="usuario flex center-horizontal">
     <p>Bienvenido {{usuarioService.getUser()}}</p>
+    
+  </div>
+
+  <div *ngIf="conductoresService.isUserLogged()" class="usuario flex center-horizontal">
+    <p>Bienvenido {{conductoresService.getUserLog()}}</p>
+    
   </div>
   <nav>
 

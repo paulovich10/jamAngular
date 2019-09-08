@@ -25,5 +25,20 @@ export class ConductoresService {
 
   }
 
+  isUserLogged() {
+    if (localStorage.getItem('user-token') && localStorage.getItem('usernname')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  getUserLog() {
+    return JSON.parse(localStorage.getItem('username'))["user.usuario"];
+  }
+
+
+  
+
 
 }

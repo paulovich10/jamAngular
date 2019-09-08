@@ -30,6 +30,8 @@ export class UsuarioService {
   getUser() {
     return JSON.parse(localStorage.getItem('usuario'))["usuario"];
   }
+
+  
 }
 
 

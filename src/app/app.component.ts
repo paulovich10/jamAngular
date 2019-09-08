@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from './usuario.service';
+import { ConductoresService } from './conductores.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { UsuarioService } from './usuario.service';
 export class AppComponent {
   title = 'jamAngular';
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private conductoresService: ConductoresService) {
   }
 
   onLogOut() {
