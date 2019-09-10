@@ -20,25 +20,12 @@ export class ConductoresService {
   }
 
   create(values): Promise<any> {
-    //console.log(values);
+
     return this.http.post<any>(`${this.baseUrl}/registro`, values).toPromise();
 
   }
 
-  isUserLogged() {
-    if (localStorage.getItem('user-token') && localStorage.getItem('usernname')) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
-  getUserLog() {
-    return JSON.parse(localStorage.getItem('username'))["user.usuario"];
-  }
-
-
-  
 
 
 }

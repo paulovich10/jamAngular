@@ -6,12 +6,10 @@
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjMM9PTlG4sB_GWtGAsi2vXN0-EAH6NuvVXYnOIqBA_o5Y_7RW">
 
 
-        <div class="flex column centerVertical centerHorizontal">
-            <p><strong>Nombre:</strong>Lola Ramirez</p>
-            <p><strong>Fecha de nacimiento:</strong>15/08/1981</p>
-            <p><strong>Email:</strong>Lola@gmail.com</p>
-
-
+        <div class="flex column centerVertical centerHorizontal espaciado">
+            <p><strong>Nombre: </strong>{{usuario?.nombre}} {{usuario?.apellidos}}</p>
+            <p><strong>Fecha de nacimiento: </strong>{{usuario?.fecha_nacimiento | date: 'dd/MM/yyyy'}}</p>
+            <p><strong>Email: </strong>{{usuario?.email}}</p>
         </div>
 
     </div>

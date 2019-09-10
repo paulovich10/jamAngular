@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,10 @@ export class UsuarioService {
   }
 
   login(values) {
-
     return this.http.post(`${this.baseUrl}/login`, values).toPromise();
   }
+
+
 
   isUserLogged() {
     if (localStorage.getItem('user-token')) {
@@ -28,10 +29,25 @@ export class UsuarioService {
   }
 
   getUser() {
-    return JSON.parse(localStorage.getItem('usuario'))["usuario"];
+    return localStorage.getItem('username');
   }
 
-  
+  profile() {
+    let httpOptions = this.getHeaders();
+    console.log(httpOptions);
+    return this.http.post(`${this.baseUrl}/profile`, {}, httpOptions).toPromise();
+
+  }
+
+  getHeaders() {
+    return {
+      headers: new HttpHeaders({
+        'autorizacion': localStorage.getItem('user-token')
+      })
+    }
+  }
+
+
 }
 
 

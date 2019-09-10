@@ -35,13 +35,16 @@ export class RegisterComponent implements OnInit {
 
       .then(response => {
         console.log(response)
-        if (response['token'] && response['usuario']) {
+        if (response['token'] && response['username']) {
           localStorage.setItem('user-token', response['token']);
-          localStorage.setItem('usuario', JSON.stringify(response['usuario']));
+          localStorage.setItem('username', response['username']);
           //console.log(response);
           this.router.navigate(['/home']);
-        } else {
-          alert('Error en el registro. Inténtalo más tarde. 1');
+        } else if (response['errorEmail']) {
+          //alert('Error en el registro. Inténtalo más tarde. 1');
+          alert('el email que has introducido ya está registrado');
+        } else if (response['errorUsuario']) {
+          alert('el usuario que has introducido ya está registrado');
         }
 
       })

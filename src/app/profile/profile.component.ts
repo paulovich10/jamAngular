@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { UsuarioService } from '../usuario.service';
+import { Response } from 'selenium-webdriver/http';
+import { User } from '../models/user.model';
 
 declare var google;
 
@@ -21,9 +24,23 @@ export class ProfileComponent implements OnInit {
   directionsService: any;
   directionsDisplay: any;
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService) { }
+
+  usuario: any;
 
   ngOnInit() {
+
+    this.usuarioService.profile()
+      .then((response) => {
+        console.log(response);
+        this.usuario = response;
+
+
+      })
+
+
+
+
     if (navigator.geolocation) {
 
       navigator.geolocation.getCurrentPosition((position) => {
