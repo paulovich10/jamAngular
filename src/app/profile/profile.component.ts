@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { UsuarioService } from '../usuario.service';
-import { Response } from 'selenium-webdriver/http';
-import { User } from '../models/user.model';
+
 
 declare var google;
 
@@ -47,6 +46,8 @@ export class ProfileComponent implements OnInit {
       console.log('no hay geolocalización');
     }
   }
+
+
 
   loadMap(currentCoords) {
     this.directionsService = new google.maps.DirectionsService();
@@ -116,6 +117,11 @@ export class ProfileComponent implements OnInit {
         break;
       }
     }
+  }
+
+  onSubmitLoc() {
+
+
   }
 
 

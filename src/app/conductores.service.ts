@@ -25,10 +25,6 @@ export class ConductoresService {
 
   }
 
-  update(values): Promise<any> {
-
-    return this.http.post<any>(`${this.baseUrl}/update`, values).toPromise();
-  }
 
 
 

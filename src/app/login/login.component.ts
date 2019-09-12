@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.usuarioService.login(this.formulario.value)
-
       .then(response => {
 
         if (response['token'] && response['username']) {

@@ -9,7 +9,7 @@ export class UsuarioService {
   baseUrl: string;
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private usuarioService: UsuarioService) {
 
     this.baseUrl = 'http://localhost:3000/api/usuarios';
   }
@@ -17,8 +17,6 @@ export class UsuarioService {
   login(values) {
     return this.http.post(`${this.baseUrl}/login`, values).toPromise();
   }
-
-
 
   isUserLogged() {
     if (localStorage.getItem('user-token')) {
@@ -39,6 +37,12 @@ export class UsuarioService {
 
   }
 
+  update(values): Promise<any> {
+    let httpOptions = this.getHeaders();
+    return this.http.put<any>(`${this.baseUrl}/update`, values, httpOptions).toPromise();
+  }
+
+
   getHeaders() {
     return {
       headers: new HttpHeaders({
@@ -46,6 +50,8 @@ export class UsuarioService {
       })
     }
   }
+
+
 
 
 }

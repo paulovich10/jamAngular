@@ -8,7 +8,7 @@
                 <form novalidate [formGroup]="formUpdate" (ngSubmit)="onSubmit()">
                     <div class="form-group">
 
-                        <input type="text" class="form-control" formControlName="nombre" value="">
+                        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
                         <p class="error"
                             *ngIf="formUpdate.controls['nombre'].errors?.required && formUpdate.controls['nombre'].touched">
                             El campo nombre es requerido
@@ -24,10 +24,10 @@
                     </div>
                     <div class="form-group">
 
-                        <input type="text" class="form-control" formControlName="apellidos">
+                        <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" formControlName="email">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email">
                     </div>
                     <div class="form-group">
 
@@ -35,18 +35,7 @@
                     </div>
                     <div class="form-group">
 
-                        <input type="text" class="form-control" formControlName="usuario">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="password" class="form-control" formControlName="password">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="password" class="form-control" formControlName="password_repeat">
-                        <p class="error" *ngIf="formUpdate.errors?.passwordvalidator">
-                            ⚠️ {{formulario.errors.passwordvalidator }} ⚠️
-                        </p>
+                        <input type="text" class="form-control" formControlName="usuario" placeholder="Usuario">
                     </div>
 
                     <input type="submit" value="Enviar">
