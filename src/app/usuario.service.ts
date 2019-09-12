@@ -35,7 +35,7 @@ export class UsuarioService {
   profile() {
     let httpOptions = this.getHeaders();
     console.log(httpOptions);
-    return this.http.post(`${this.baseUrl}/profile`, {}, httpOptions).toPromise();
+    return this.http.get(`${this.baseUrl}/profile`, httpOptions).toPromise();
 
   }
 

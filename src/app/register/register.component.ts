@@ -40,11 +40,9 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('username', response['username']);
           //console.log(response);
           this.router.navigate(['/home']);
-        } else if (response['errorEmail']) {
+        } else if (response['error']) {
           //alert('Error en el registro. Inténtalo más tarde. 1');
-          alert('el email que has introducido ya está registrado');
-        } else if (response['errorUsuario']) {
-          alert('el usuario que has introducido ya está registrado');
+          alert(response['error']);
         }
 
       })

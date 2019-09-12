@@ -34,12 +34,8 @@ export class ProfileComponent implements OnInit {
       .then((response) => {
         console.log(response);
         this.usuario = response;
-
-
+        console.log(this.usuario)
       })
-
-
-
 
     if (navigator.geolocation) {
 

@@ -1,27 +1,20 @@
 <div class="container flex row center-horizontal center-vertical">
 
-    <div class="">
-        <img src="assets/img/registro.jpg">
-    </div>
-
     <div>
-
-        <h2>Entra en la comunidad</h2>
-
+        <h2>Modificar Perfil</h2>
         <div>
             <div class="contenedor">
-                <p *ngIf="formulario.untouched"></p>
-                <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <p *ngIf="formUpdate.untouched"></p>
+                <form novalidate [formGroup]="formUpdate" (ngSubmit)="onSubmit()">
                     <div class="form-group">
 
-                        <input value="Marta" type="text" class="form-control" formControlName="nombre"
-                            placeholder="Nombre">
+                        <input type="text" class="form-control" formControlName="nombre" value="">
                         <p class="error"
-                            *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
+                            *ngIf="formUpdate.controls['nombre'].errors?.required && formUpdate.controls['nombre'].touched">
                             El campo nombre es requerido
                         </p>
                         <p class="error"
-                            *ngIf="formulario.controls['nombre'].errors?.maxlength && formulario.controls['nombre'].touched">
+                            *ngIf="formUpdate.controls['nombre'].errors?.maxlength && formUpdate.controls['nombre'].touched">
                             El campo nombre debe tener máximo
                             {{formulario.controls['nombre'].errors?.maxlength.requiredLength}}
                             caracteres. Tú has insertado
@@ -31,30 +24,27 @@
                     </div>
                     <div class="form-group">
 
-                        <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+                        <input type="text" class="form-control" formControlName="apellidos">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="email">
                     </div>
                     <div class="form-group">
 
-                        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                        <input type="date" class="form-control" formControlName="fecha_nacimiento">
                     </div>
                     <div class="form-group">
 
-                        <input type="date" class="form-control" formControlName="fecha_nacimiento"
-                            placeholder="Fecha de nacimiento">
+                        <input type="text" class="form-control" formControlName="usuario">
                     </div>
                     <div class="form-group">
 
-                        <input type="text" class="form-control" formControlName="usuario" placeholder="usuario">
+                        <input type="password" class="form-control" formControlName="password">
                     </div>
                     <div class="form-group">
 
-                        <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="password" class="form-control" formControlName="password_repeat"
-                            placeholder="Repite contraseña">
-                        <p class="error" *ngIf="formulario.errors?.passwordvalidator">
+                        <input type="password" class="form-control" formControlName="password_repeat">
+                        <p class="error" *ngIf="formUpdate.errors?.passwordvalidator">
                             ⚠️ {{formulario.errors.passwordvalidator }} ⚠️
                         </p>
                     </div>
