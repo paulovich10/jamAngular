@@ -3,33 +3,30 @@ h1 {
 
    
     font-size: 10em;
-    line-height: 1;
     color: var(--gris);
-    margin-bottom: -20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    align-self: flex-start;
+    margin-left: 30%;
  
  }
  
- /* h1 span {
+ h1 span {
     
-    color: var(--gris);
+    margin-top: 200px;
  
- } */
+ }
  
  
  #hero {
  
-    height: 100vh;
+    height: 140vh;
     /* position: relative; */
-    background: white url('../../assets/img/cabecera.jpg') no-repeat center / cover;
+    background: white url('../../assets/img/cabeceratres.jpg') no-repeat center / cover;
  
  }
  
- .cabecera {
  
-    font-family: 'Anton', sans-serif;
-    
- 
- }
  
  .cabecera p {
  
@@ -46,7 +43,9 @@ h1 {
     text-align: center;
     font-size: 5em;
     color: var(--rojo);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
+
     
  }
  
