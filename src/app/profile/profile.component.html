@@ -17,17 +17,19 @@
 
 
     <div class="localizacion flex row centerHorizontal centerVertical">
-        <form novalidate #formulario="ngForm" (ngSubmit)="onSubmitLoc()">
+        <form novalidate [formGroup]="formProfile" (ngSubmit)="onSubmitLoc()">
             <div class="flex column locInputs">
                 <div class="form-group">
                     <label>Punto de partida</label>
-                    <input type="text" name="partida" class="form-control iPlaces" #inputPartida ngModel>
+                    <input type="text" #inputPartida class="form-control iPlaces" formControlName="partida">
                 </div>
                 <div>
                     <label>Punto de destino</label>
-                    <input type="text" name="destino" class="form-control iPlaces" #inputDestino ngModel>
+                    <input type="text" #inputDestino name="destino" class="form-control iPlaces"
+                        formControlName="nombre" formControlName="destino">
 
                 </div>
+
                 <input type="submit" value="guardar en perfil" class="btn btn-block btn-success">
             </div>
         </form>

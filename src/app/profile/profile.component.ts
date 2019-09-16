@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { UsuarioService } from '../usuario.service';
 
 
@@ -18,58 +18,63 @@ export class ProfileComponent implements OnInit {
   @ViewChild('inputPartida', { static: false }) inputPartidaElement: any;
   @ViewChild('inputDestino', { static: false }) inputDestinoElement: any;
   map: any;
-  formulario: FormGroup;
+
+  formProfile: FormGroup;
+
+  coordenadas: any;
+
+  coordenadasOrigen: any;
+  coordenadasDestino: any;
 
   directionsService: any;
   directionsDisplay: any;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService) {
+    this.formProfile = new FormGroup({
+      partida: new FormControl(''),
+      destino: new FormControl(''),
+
+
+    });
+
+
+
+  }
 
   usuario: any;
 
   ngOnInit() {
 
+
+
+  }
+
+  ngAfterViewInit() {
+
     this.usuarioService.profile()
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         this.usuario = response;
-        console.log(this.usuario)
+        //console.log(this.usuario)
+        this.loadMap()
       })
-
-    if (navigator.geolocation) {
-
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.loadMap(position.coords)
-      }, this.showError)
-    } else {
-
-      console.log('no hay geolocalización');
-    }
   }
 
 
 
-  loadMap(currentCoords) {
+  loadMap() {
     this.directionsService = new google.maps.DirectionsService();
     this.directionsDisplay = new google.maps.DirectionsRenderer();
 
     let mapProps = {
-      center: new google.maps.LatLng(currentCoords.latitude, currentCoords.longitude),
-      zoom: 17,
+      center: new google.maps.LatLng(40.4222761, -3.7144),
+      zoom: 9,
       mapTypeId: google.maps.MapTypeId.ROADMAP // ROADMAP, SATELLITE, TERRAIN
     }
 
     this.map = new google.maps.Map(this.gMapElement.nativeElement, mapProps);
 
     this.directionsDisplay.setMap(this.map);
-
-    let marker = new google.maps.Marker({
-      position: mapProps.center,
-      // position: new google.maps.LatLng(40.43400290, 4.131292130),
-      title: 'Aquí estoy mamá!',
-
-    });
-    marker.setMap(this.map);
 
 
     // AUTOCOMPLETE
@@ -80,7 +85,7 @@ export class ProfileComponent implements OnInit {
     // let autocomplete = new google.maps.places.Autocomplete(document.getElementById('iPlaces'));
 
     autocomplete.setFields(['address_components', 'geometry', 'icon', 'name']);
-    console.log(this.map);
+    //console.log(this.map);
 
     let autocompleteDestino = new google.maps.places.Autocomplete
       (this.inputDestinoElement.nativeElement, options)
@@ -90,6 +95,24 @@ export class ProfileComponent implements OnInit {
       let place = autocomplete.getPlace();
       let lat = place.geometry.location.lat();
       let lng = place.geometry.location.lng();
+      self.coordenadasOrigen = {
+        latitud: lat,
+        longitud: lng
+      }
+      self.map.setCenter(place.geometry.location);
+
+      let markerPlace = new google.maps.Marker({ position: place.geometry.location, animation: google.maps.Animation.DROP })
+      markerPlace.setMap(self.map);
+    })
+
+    autocompleteDestino.addListener('place_changed', function () {
+      let place = autocompleteDestino.getPlace();
+      let lat = place.geometry.location.lat();
+      let lng = place.geometry.location.lng();
+      self.coordenadasDestino = {
+        latitud: lat,
+        longitud: lng
+      }
       self.map.setCenter(place.geometry.location);
 
       let markerPlace = new google.maps.Marker({ position: place.geometry.location, animation: google.maps.Animation.DROP })
@@ -97,6 +120,9 @@ export class ProfileComponent implements OnInit {
     })
 
   }
+
+
+
 
   showError(error) {
     switch (error.code) {
@@ -120,9 +146,52 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmitLoc() {
+    let coordenadas = {
 
+      origen: this.coordenadasOrigen,
+      destino: this.coordenadasDestino
+
+    }
+
+    let start = new google.maps.LatLng(this.coordenadasOrigen.latitud, this.coordenadasOrigen.longitud);
+    let end = new google.maps.LatLng(this.coordenadasDestino.latitud, this.coordenadasDestino.longitud);
+
+    // Creamos las opciones de la petición
+    let opts = {
+      origin: start,
+      destination: end,
+      travelMode: google.maps.TravelMode.DRIVING
+    }
+
+    // Lanzamos la petición
+    let self = this;
+    this.directionsService.route(opts, function (result, status) {
+      console.log(result);
+      self.directionsDisplay.setDirections(result);
+    })
+
+    this.usuarioService.location(coordenadas)
+
+      .then(response => {
+        //console.log(response)
+        //console.log(coordenadas)
+        if (response['affectedRows'] == 1) {
+          alert('ruta guardada satisfactoriamente');
+          console.log(response);
+
+        } else if (response['error']) {
+          //alert('Error en el registro. Inténtalo más tarde. 1');
+          alert(response['error']);
+        }
+
+      })
+      .catch(err => {
+        console.log(err)
+        alert('Error en el registro. Inténtalo más tarde. 2');
+      });
 
   }
+
 
 
 }

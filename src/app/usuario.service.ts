@@ -42,6 +42,11 @@ export class UsuarioService {
     return this.http.put<any>(`${this.baseUrl}/update`, values, httpOptions).toPromise();
   }
 
+  location(values): Promise<any> {
+    let httpOptions = this.getHeaders();
+    return this.http.post<any>(`${this.baseUrl}/profile/localizacion`, values, httpOptions).toPromise();
+
+  }
 
   getHeaders() {
     return {
