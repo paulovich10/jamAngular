@@ -15,6 +15,8 @@ export class MapaComponent implements OnInit {
   @ViewChild('inputDestino', { static: false }) inputDestinoElement: any;
   map: any;
   bounds: any;
+  arrUsuarios: any[];
+
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
@@ -25,9 +27,14 @@ export class MapaComponent implements OnInit {
     } else {
       console.log('La he liao parda');
     }
+
+
+
   }
 
   async loadMap(currentCoords) {
+
+    let geocoder = new google.maps.Geocoder;
 
     let mapProps = {
       center: new google.maps.LatLng(currentCoords.latitude, currentCoords.longitude),
@@ -45,30 +52,16 @@ export class MapaComponent implements OnInit {
     marker.setMap(this.map);
 
     let dataMarker = await this.usuarioService.mapa();
+    this.arrUsuarios = dataMarker;
 
     let bounds = new google.maps.LatLngBounds();
 
     for (let data of dataMarker) {
       console.log(data);
-      let geocoder = new google.maps.Geocoder;
-
-      let contentString = `<div id="content"><p><b>usuario:</b> ${data.usuario}</p><p><b>contacto:</b>${data.email}</p></div>`;
-      let infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
 
       let loc = new google.maps.LatLng(data.partida.latitud, data.partida.longitud)
-      let marker = new google.maps.Marker({
-
-        position: loc,
-
-      });
-      marker.addListener('click', function () {
-        infowindow.open(this.map, marker);
-      });
-
       bounds.extend(loc);
-      marker.setMap(this.map)
+      this.geocodeLatLng(geocoder, this.map, loc, data.email, data.usuario);
 
     }
 
@@ -77,6 +70,37 @@ export class MapaComponent implements OnInit {
 
 
   }
+
+  geocodeLatLng(geocoder, map, latlng, email, usuario) {
+
+    let contentString = `<div id="content"><p><b>Usuario: </b> ${usuario}</p><p><b>Contacto: </b><a href="mailto:${email}">${email}</a></p>`;
+
+    let infowindow = new google.maps.InfoWindow();
+
+    geocoder.geocode({ 'location': latlng }, function (results, status) {
+      if (status === 'OK') {
+        if (results[0]) {
+          var marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+          });
+
+          infowindow.setContent(`${contentString}<p><b>Destino: </b>${results[0].formatted_address}</p></div>`);
+          marker.addListener('click', function () {
+            infowindow.open(map, marker);
+          });
+
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+
+
+
   showError(error) {
     switch (error.code) {
       case error.PERMISSION_DENIED: {

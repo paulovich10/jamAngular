@@ -1,6 +1,11 @@
 <div class="flex row">
     <div #googleMap class="mapa"></div>
     <div class="mostrarUsuarios">
+        <div class="tarjetaUsuario" *ngFor="let usuario of arrUsuarios">
+            <p>{{usuario.usuario}}</p>
+            <p><a [href]="usuario.email">{{usuario.email}}</a></p>
+
+        </div>
 
 
     </div>

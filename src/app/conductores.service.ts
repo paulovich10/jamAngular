@@ -14,9 +14,9 @@ export class ConductoresService {
     this.baseUrl = 'http://localhost:3000/api/conductores'
   }
 
-  getAll(): Promise<User[]> {
+  getAll(): Promise<any> {
 
-    return this.http.get<User[]>(this.baseUrl).toPromise()
+    return this.http.get<any>(this.baseUrl).toPromise()
   }
 
   create(values): Promise<any> {
