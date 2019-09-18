@@ -50,6 +50,8 @@ export class MapaComponent implements OnInit {
 
     for (let data of dataMarker) {
       console.log(data);
+      let geocoder = new google.maps.Geocoder;
+
       let contentString = `<div id="content"><p><b>usuario:</b> ${data.usuario}</p><p><b>contacto:</b>${data.email}</p></div>`;
       let infowindow = new google.maps.InfoWindow({
         content: contentString

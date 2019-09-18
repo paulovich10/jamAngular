@@ -1,4 +1,13 @@
 .mapa {
-    width: 80%;
+    width: 60%;
     height: 80vh;
+    margin: 3%;
+}
+
+.mostrarUsuarios{
+
+    width: 25%;
+    height: 80vh;
+    background-color: aqua;
+    margin: 3%;
 }
