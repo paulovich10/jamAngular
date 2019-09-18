@@ -10,7 +10,9 @@
     <a *ngIf="!usuarioService.isUserLogged()" [routerLink]="['/login']">Entrar</a>
     <a *ngIf="!usuarioService.isUserLogged()" [routerLink]="['/register']">Registro</a>
     <a *ngIf="usuarioService.isUserLogged()" [routerLink]="['/profile']">Perfil</a>
+    <a *ngIf="usuarioService.isUserLogged()" [routerLink]="['/mapa']">Mapa</a>
     <a *ngIf="usuarioService.isUserLogged()" (click)="onLogOut()">Salir</a>
+
 
 
 

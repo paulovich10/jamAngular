@@ -31,8 +31,10 @@ export class UsuarioService {
   }
 
   profile() {
+
+    //console.log(values)
     let httpOptions = this.getHeaders();
-    console.log(httpOptions);
+    //console.log(httpOptions);
     return this.http.get(`${this.baseUrl}/profile`, httpOptions).toPromise();
 
   }
@@ -43,10 +45,25 @@ export class UsuarioService {
   }
 
   location(values): Promise<any> {
+
+    let coordenadas = {
+
+      origenlat: values.origen.latitud,
+      origenlong: values.origen.longitud,
+      destinolat: values.destino.latitud,
+      destinolong: values.destino.longitud
+
+    }
+    console.log(coordenadas);
     let httpOptions = this.getHeaders();
-    return this.http.post<any>(`${this.baseUrl}/profile/localizacion`, values, httpOptions).toPromise();
+    return this.http.post<any>(`${this.baseUrl}/profile/localizacion`, coordenadas, httpOptions).toPromise();
 
   }
+
+  mapa(): Promise<any> {
+    return this.http.get<any>(`${this.baseUrl}/mapa`).toPromise();
+  }
+
 
   getHeaders() {
     return {

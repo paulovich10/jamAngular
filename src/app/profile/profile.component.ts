@@ -43,11 +43,7 @@ export class ProfileComponent implements OnInit {
 
   usuario: any;
 
-  ngOnInit() {
-
-
-
-  }
+  ngOnInit() { }
 
   ngAfterViewInit() {
 
@@ -55,14 +51,40 @@ export class ProfileComponent implements OnInit {
       .then((response) => {
         //console.log(response);
         this.usuario = response;
+        //console.log(response)
         //console.log(this.usuario)
-        this.loadMap()
+
+        //hemos metido en la funcion loadMap para que se cargue la carga del map antes
+        this.loadMap(() => {
+          if (response['origen'] && response['destino']) {
+            console.log(response['origen'], response['destino'])
+            let start = new google.maps.LatLng(response['origen'].latitud, response['origen'].longitud);
+            let end = new google.maps.LatLng(response['destino'].latitud, response['destino'].longitud);
+
+            // Creamos las opciones de la petición
+            let opts = {
+              origin: start,
+              destination: end,
+              travelMode: google.maps.TravelMode.DRIVING
+            }
+
+            // Lanzamos la petición
+            let self = this;
+            this.directionsService.route(opts, function (result, status) {
+              //console.log(result);
+              self.directionsDisplay.setDirections(result);
+            })
+
+          }
+
+        });
+
       })
   }
 
 
 
-  loadMap() {
+  loadMap(done) {
     this.directionsService = new google.maps.DirectionsService();
     this.directionsDisplay = new google.maps.DirectionsRenderer();
 
@@ -119,6 +141,8 @@ export class ProfileComponent implements OnInit {
       markerPlace.setMap(self.map);
     })
 
+    done();
+
   }
 
 
@@ -166,7 +190,7 @@ export class ProfileComponent implements OnInit {
     // Lanzamos la petición
     let self = this;
     this.directionsService.route(opts, function (result, status) {
-      console.log(result);
+      //console.log(result);
       self.directionsDisplay.setDirections(result);
     })
 
@@ -177,7 +201,7 @@ export class ProfileComponent implements OnInit {
         //console.log(coordenadas)
         if (response['affectedRows'] == 1) {
           alert('ruta guardada satisfactoriamente');
-          console.log(response);
+          //console.log(response);
 
         } else if (response['error']) {
           //alert('Error en el registro. Inténtalo más tarde. 1');

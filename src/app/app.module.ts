@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './update/update.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { UpdateComponent } from './update/update.component';
     HomeComponent,
     ProfileComponent,
     UpdateComponent,
+    MapaComponent,
 
 
   ],

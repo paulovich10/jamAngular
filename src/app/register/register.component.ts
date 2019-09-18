@@ -32,7 +32,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.conductoresService.create(this.formulario.value)
-
       .then(response => {
         console.log(response)
         if (response['token'] && response['username']) {
