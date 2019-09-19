@@ -11,25 +11,7 @@ html, body {
    overflow-x: hidden;
 }
 
-:root {
- 
-   --rojo : rgb(226, 62, 60);
-   --gris: rgb(34, 37, 42);
-   --azul:  rgb(1, 182, 193);
-}
 
-h2, p {
- 
-   font-family: 'Roboto', sans-serif;
-   
-}
-
-h2 {
-
-   padding-bottom: .7em;
-   color: var(--azul);
-   font-size: 2em;
-}
 
 .flex {
 
