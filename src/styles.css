@@ -66,3 +66,72 @@ html, body {
    justify-content: flex-end;
 } 
 
+p, h2, h3 {
+
+   font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+
+   color: rgb(110, 169, 247);
+   
+}
+
+hr {
+
+   border: 1px solid rgb(110, 169, 247);
+   width: 200px;
+   align-self: center;
+}
+
+form {
+
+   font-size: 1em;
+   font-family: Arial;
+   margin: 0 auto;
+ }
+
+ form div {
+   display: flex;
+   flex-direction: column;
+   margin: 1em;
+   
+
+ }
+
+ input {
+     width: 300px;
+     padding: .5em;
+     margin: .5em;
+     border-left: none;
+     border-top: none;
+     border-right: none;
+     border-bottom: 1px solid rgb(110, 169, 247);
+     font-size: 1em;
+
+ }
+
+
+
+ .container {
+
+   margin-top: 5em;
+   box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+ }
+
+ input[type="submit"] {
+
+   border-bottom: none;
+   background-color: rgb(1, 182, 193);
+   border-radius: 30px;
+   width: 30%;
+   font-size: 1.1em;
+   cursor: pointer;
+   
+ }
+ input[type="submit"] p {
+
+   color: white;
+ }
+
+

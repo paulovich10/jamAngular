@@ -18,6 +18,24 @@ h1 span {
    padding-left: 50%;
 
  }
+
+ h2 {
+
+   font-size: 2.3rem;
+   padding-bottom: 10%;
+ }
+
+ .titulo {
+
+   margin-top: 8%;
+ }
+
+
+ .titulo p {
+
+   padding-top: 2%;
+   text-align: center;
+ }
  
  .cabecera > p {
 
@@ -46,11 +64,10 @@ h1 span {
  h3 {
  
     text-align: center;
-    font-size: 5em;
-    color: var(--rojo);
-    font-family: 'Poppins', sans-serif;
-
-
+    font-size: 2em;
+    color: rgb(59, 141, 247);
+    padding-top: 5%;
+    padding-bottom: 2%;
     
  }
  
@@ -78,6 +95,10 @@ h1 span {
     width: 40%;
    padding: 5px;
     transition: .5s;
+    border-radius: 20px;
+    border: 1px solid white;
+    margin-top: 5%;
+
     
     
  }
@@ -92,14 +113,14 @@ h1 span {
  .boton:hover {
  
     cursor: pointer;
-    background-color: var(--gris);
+    background-color: white;
+    border: 1px solid rgb(110, 169, 247);
     
  }
  
  .boton:hover p {
-    color: white;
+    color:black;
  
-    
  }
  
  #intro {
@@ -118,11 +139,18 @@ h1 span {
  
  .contenedorIntro div > div{
  
-     padding-top: 10%;
+     padding-top: 15%;
      padding-left: 5%;
      width: 75%;
  }
  
+
+ hr {
+
+   border: 1px solid rgb(110, 169, 247);
+   width: 200px;
+   
+}
  
 
  
