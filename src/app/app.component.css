@@ -16,13 +16,15 @@ nav {
     align-items: center;
     justify-content: flex-end;
     height: 70px;
+    padding-right: 2%;
     
    
 }
 
 .usuario {
 
-    width: 100px;
+    padding-right: 50px;
+    color: rgb(110, 169, 247);
 }
 
 a {
@@ -35,12 +37,17 @@ a {
     padding-right: 2em;
     font-family: Arial;
     letter-spacing: 1px;
-
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 a:hover {
 
-    color: tomato;
+    background-color:rgb(110, 169, 247);
+    color:white;
     transition: .5s ease-out;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
 }
 

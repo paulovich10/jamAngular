@@ -7,7 +7,7 @@
                 <p *ngIf="formUpdate.untouched"></p>
                 <form novalidate [formGroup]="formUpdate" (ngSubmit)="onSubmit()">
                     <div class="form-group">
-
+                        <label>Nombre</label>
                         <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
                         <p class="error"
                             *ngIf="formUpdate.controls['nombre'].errors?.required && formUpdate.controls['nombre'].touched">
@@ -23,18 +23,19 @@
                         </p>
                     </div>
                     <div class="form-group">
-
+                        <label>Apellidos</label>
                         <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
                     </div>
                     <div class="form-group">
+                        <label>Email</label>
                         <input type="email" class="form-control" formControlName="email" placeholder="Email">
                     </div>
                     <div class="form-group">
-
+                        <label>Fecha de nacimiento</label>
                         <input type="date" class="form-control" formControlName="fecha_nacimiento">
                     </div>
                     <div class="form-group">
-
+                        <label>Usuario</label>
                         <input type="text" class="form-control" formControlName="usuario" placeholder="Usuario">
                     </div>
 

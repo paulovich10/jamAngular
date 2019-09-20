@@ -122,11 +122,11 @@ form {
  input[type="submit"] {
 
    border-bottom: none;
-   background-color: rgb(1, 182, 193);
+   background-color:rgb(110, 169, 247);
    border-radius: 30px;
-   width: 30%;
    font-size: 1.1em;
    cursor: pointer;
+   color: white;
    
  }
  input[type="submit"] p {

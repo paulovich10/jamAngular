@@ -73,7 +73,7 @@ export class MapaComponent implements OnInit {
 
   geocodeLatLng(geocoder, map, latlng, email, usuario) {
 
-    let contentString = `<div id="content"><p><b>Usuario: </b> ${usuario}</p><p><b>Contacto: </b><a href="mailto:${email}">${email}</a></p>`;
+    let contentString = `<div id="content"><p><b>Usuario: </b> ${usuario}</p><p><b>Contacto: </b><a style="text-decoration: none" href="mailto:${email}">${email}</a></p>`;
 
     let infowindow = new google.maps.InfoWindow();
 

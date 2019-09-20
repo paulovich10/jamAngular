@@ -1,7 +1,12 @@
 .mapa {
     width: 60%;
-    height: 80vh;
+    height: 70vh;
     margin: 3%;
+}
+
+h2 {
+
+    text-align: center;
 }
 
 .mostrarUsuarios{
@@ -18,10 +23,18 @@
     padding: 1%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    
+}
+
+.tarjetaUsuario a {
+
+    text-decoration: none;
+    color: rgb(110, 169, 247);
 }
 
 .tarjetaUsuario p {
 
     padding-left: 2%;
     padding-top: 1%;
+    color: rgba(0, 0, 0, 0.7)
 }
