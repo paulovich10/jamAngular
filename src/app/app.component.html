@@ -12,10 +12,6 @@
     <a *ngIf="usuarioService.isUserLogged()" [routerLink]="['/profile']">Perfil</a>
     <a *ngIf="usuarioService.isUserLogged()" [routerLink]="['/mapa']">Mapa</a>
     <a *ngIf="usuarioService.isUserLogged()" (click)="onLogOut()">Salir</a>
-
-
-
-
     <!-- <a href="#About">Sobre la app</a> crear-->
   </nav>
 </div>
