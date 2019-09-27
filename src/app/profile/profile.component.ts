@@ -91,7 +91,9 @@ export class ProfileComponent implements OnInit {
     let mapProps = {
       center: new google.maps.LatLng(40.4222761, -3.7144),
       zoom: 9,
-      mapTypeId: google.maps.MapTypeId.ROADMAP // ROADMAP, SATELLITE, TERRAIN
+      mapTypeId: google.maps.MapTypeId.ROADMAP,// ROADMAP, SATELLITE, TERRAIN,
+      disableDefaultUI: true
+
     }
 
     this.map = new google.maps.Map(this.gMapElement.nativeElement, mapProps);

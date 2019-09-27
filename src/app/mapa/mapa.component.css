@@ -38,3 +38,16 @@ h2 {
     padding-top: 1%;
     color: rgba(0, 0, 0, 0.7)
 }
+
+@media screen and (max-width: 360px) {
+
+    .mostrarUsuarios {
+
+        display: none;
+    }
+
+    .mapa {
+
+        width: 100%;
+    }
+}

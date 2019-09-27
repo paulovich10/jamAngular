@@ -150,16 +150,97 @@ h1 span {
    
 }
  
-
- 
- 
- 
  /*----localizacion-----*/
  
  #localizacion div {
  
      margin: 7%;
  }
+
+ /*---media queries----*/
+
+ @media screen and (max-width: 360px) {
+
+      h1 {
+
+         font-size: 3rem;
+      }
+
+      h1 span {
+
+         font-size: 2rem;
+         margin-top: -8%;
+         padding-left: 3%;
+      }
+
+      #hero p {
+
+         font-size: .9em;
+      }
+
+      .boton {
+
+         font-size: .8em;
+         cursor: pointer;
+      }
+
+      /*-----intro-----*/
+
+      .titulo img {
+
+         display: none;
+      }
+
+      .titulo h3 {
+         font-size: 1.2em;
+      }
+
+      .titulo p {
+
+         font-size: .9em;
+         padding: 3%;
+      }
+
+      .columnar {
+
+         flex-direction: column;
+      }
+
+      .contenedorIntro img {
+
+         width: 100%;
+      }
+
+      .contenedorIntro div:nth-child(even) {
+
+         flex-direction: column-reverse;
+         margin-top: 20%;
+      }
+
+      .contenedorIntro div > div{
+
+         padding-top: 0%;
+         padding-left: 0%;
+      }
+
+      .contenedorIntro h2 {
+
+         font-size: 1.5rem;
+      }
+
+      .contenedorIntro p {
+
+         font-size: 1rem;
+      }
+      
+      .dinero {
+
+         margin-top: 40%;
+         margin-bottom: 40%;
+      }
+
+ }
+
 
 
 

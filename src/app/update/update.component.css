@@ -2,3 +2,30 @@ label {
 
     color: rgb(110, 169, 247);
 }
+
+@media screen and (max-width: 360px) { 
+
+    input, label {
+
+        font-size: .8em;
+      }
+
+      h2 {
+
+        text-align: center;
+      }
+      
+      input {
+      
+        margin: .4em;
+      }
+      
+      input[type=submit] {
+      
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+        
+      }
+
+}

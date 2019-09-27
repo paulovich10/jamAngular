@@ -1,11 +1,8 @@
-<div class="contenedor flex row end">
-  <div *ngIf="usuarioService.isUserLogged()" class="usuario flex center-horizontal">
-    <p>Bienvenido {{usuarioService.getUser()}}</p>
-
-  </div>
+<div class="contenedor flex column end">
+  
 
   <nav>
-
+    
     <a [routerLink]="['/home']">Home</a>
     <a *ngIf="!usuarioService.isUserLogged()" [routerLink]="['/login']">Entrar</a>
     <a *ngIf="!usuarioService.isUserLogged()" [routerLink]="['/register']">Registro</a>
@@ -14,6 +11,11 @@
     <a *ngIf="usuarioService.isUserLogged()" (click)="onLogOut()">Salir</a>
     <!-- <a href="#About">Sobre la app</a> crear-->
   </nav>
+
+  <div *ngIf="usuarioService.isUserLogged()" class="usuario flex center-horizontal end">
+    <p>Bienvenido {{usuarioService.getUser()}}</p>
+
+  </div>
 </div>
 
 <router-outlet></router-outlet>

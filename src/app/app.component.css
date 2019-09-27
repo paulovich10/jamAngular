@@ -9,15 +9,13 @@ p {
     padding-left: 2em;
 }
 
-.contenedor {
-    padding-top: 1%;
-    padding-right: 5%;
-}
+
 
 
 .usuario {
 
     padding-right: 50px;
+    padding-top: 1%;
     color: rgb(110, 169, 247);
 }
 
@@ -36,11 +34,42 @@ a {
 
 a:hover {
 
-    background-color:rgb(110, 169, 247);
     color:white;
     transition: .5s ease-out;
     padding-top: 5px;
     padding-bottom: 5px;
     
+}
+
+.resize {
+
+    width: 30px;
+}
+
+@media screen and (max-width: 360px) {
+
+    nav {
+       position: relative;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+ 
+       
+         
+   }
+ 
+   nav a {
+ 
+    color: white;
+    font-size: .9em;
+   }
+ 
+   .menu img{
+ 
+    width: 30px;
+    height:30px;
+ 
+   }
+ 
 }
 

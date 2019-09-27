@@ -8,6 +8,23 @@ form {
     padding-left: 10%;
 }
 
+@media screen and (max-width: 360px) {
+
+    form {
+
+        padding-top: 30%;
+    }
+
+    input[type=submit] {
+
+        width: 200px;
+        padding: 8px;
+        font-size: .9em;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 
 
 

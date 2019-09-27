@@ -1,13 +1,29 @@
 
+.container img {
 
-  /* #mat-input-0 {
+  display: none;
 
-    border-bottom: 1px solid grey;
-    position: relative;
-  }
+}
 
-  #mat-autocomplete-0 {
+h2 {
 
-    position: absolute;
-    top: 0;
-  } */
+  text-align: center;
+}
+
+input, label {
+
+  font-size: .8em;
+}
+
+input {
+
+  margin: .4em;
+}
+
+input[type=submit] {
+
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  
+}
