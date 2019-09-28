@@ -22,11 +22,11 @@ p {
 a {
 
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1em;
     display: block;
     padding-left: 2em;
     padding-right: 2em;
-    font-family: Arial;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
     cursor: pointer;
     border-radius: 20px;
@@ -40,6 +40,8 @@ a:hover {
     padding-bottom: 5px;
     
 }
+
+
 
 .resize {
 

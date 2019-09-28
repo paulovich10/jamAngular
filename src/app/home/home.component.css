@@ -159,6 +159,64 @@ h1 span {
 
  /*---media queries----*/
 
+ @media screen and (max-width: 768px) {
+
+   h1 {
+
+      font-size: 5rem;
+   }
+
+   h1 span {
+
+      font-size: 3rem;
+      margin-top: -10%;
+      padding-left: 3%;
+   }
+
+   .columnar {
+
+      flex-direction: column;
+   }
+
+   .contenedorIntro img {
+
+      width: 100%;
+   }
+
+   .contenedorIntro div:nth-child(even) {
+
+      flex-direction: column-reverse;
+      
+   }
+
+   .contenedorIntro div > div{
+
+      padding-top: 0%;
+      padding-left: 0%;
+   }
+
+   .contenedorIntro h2 {
+
+      font-size: 1.5rem;
+   }
+
+   .contenedorIntro p {
+
+      font-size: 1rem;
+   }
+
+   .dinero {
+
+      margin-top: 20%;
+      margin-bottom: 20%;
+   }
+   
+  
+
+
+ }
+
+
  @media screen and (max-width: 360px) {
 
       h1 {
@@ -201,43 +259,13 @@ h1 span {
          padding: 3%;
       }
 
-      .columnar {
-
-         flex-direction: column;
-      }
-
-      .contenedorIntro img {
-
-         width: 100%;
-      }
-
-      .contenedorIntro div:nth-child(even) {
-
-         flex-direction: column-reverse;
-         margin-top: 20%;
-      }
-
-      .contenedorIntro div > div{
-
-         padding-top: 0%;
-         padding-left: 0%;
-      }
-
-      .contenedorIntro h2 {
-
-         font-size: 1.5rem;
-      }
-
-      .contenedorIntro p {
-
-         font-size: 1rem;
-      }
-      
       .dinero {
 
          margin-top: 40%;
          margin-bottom: 40%;
       }
+
+  
 
  }
 

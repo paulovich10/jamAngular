@@ -23,6 +23,7 @@
 .fichaUsuario img {
 
     width: 10%;
+    
 }
 
 .mapa {
@@ -54,12 +55,44 @@
     line-height: 2em;
 }
 
-@media screen and (max-width: 360px) {
-
+@media screen and (max-width: 768px){
     .fichaUsuario img {
 
         display: none;
     }
+
+    form {
+
+        font-size: .9rem;
+    }
+
+
+    form input[type=submit], input[type=submit] {
+
+        width: 200px;
+        font-size: .8em;
+        display: block;
+        margin: 0 auto;
+        padding: 8px;
+
+    }
+    .espaciado input[type=submit]{
+        
+        margin-top: 10%;
+
+    }
+
+    .localizacion {
+
+        padding-top: 10%;
+    }
+    
+    
+} 
+
+@media screen and (max-width: 360px) {
+
+   
 
     input[type=submit] {
 
