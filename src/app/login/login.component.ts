@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {
+  constructor(public usuarioService: UsuarioService, private router: Router) {
 
     this.formulario = new FormGroup({
       usuario: new FormControl(''),

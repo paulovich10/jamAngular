@@ -10,7 +10,7 @@
             <p><strong>Nombre: </strong>{{usuario?.nombre}} {{usuario?.apellidos}}</p>
             <p><strong>Fecha de nacimiento: </strong>{{usuario?.fecha_nacimiento | date: 'dd/MM/yyyy'}}</p>
             <p><strong>Email: </strong>{{usuario?.email}}</p>
-            <input [routerLink]="['/update']" type="submit" value="modificar perfil" (click)="onSubmit">
+            <input [routerLink]="['/update']" type="submit" value="modificar perfil">
         </div>
 
     </div>

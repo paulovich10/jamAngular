@@ -17,7 +17,7 @@ export class MapaComponent implements OnInit {
   bounds: any;
   arrUsuarios: any[];
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit() {
     if (navigator.geolocation) {

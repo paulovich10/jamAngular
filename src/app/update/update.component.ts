@@ -16,7 +16,7 @@ export class UpdateComponent implements OnInit {
   formulario: FormGroup;
   usuario: any;
 
-  constructor(private conductoresService: ConductoresService, private router: Router, private usuariosService: UsuarioService) {
+  constructor(public conductoresService: ConductoresService, private router: Router, public usuariosService: UsuarioService) {
     this.formUpdate = new FormGroup({
       nombre: new FormControl(''),
       apellidos: new FormControl(''),

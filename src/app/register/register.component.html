@@ -14,8 +14,7 @@
                 <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
                     <div class="form-group">
 
-                        <input value="Marta" type="text" class="form-control" formControlName="nombre"
-                            placeholder="Nombre">
+                        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
                         <p class="error"
                             *ngIf="formulario.controls['nombre'].errors?.required && formulario.controls['nombre'].touched">
                             El campo nombre es requerido
@@ -59,7 +58,7 @@
                         </p>
                     </div>
 
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar" [disabled]="!formulario.valid">
 
                 </form>
             </div>

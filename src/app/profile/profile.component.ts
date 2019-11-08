@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
   directionsService: any;
   directionsDisplay: any;
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(public usuarioService: UsuarioService) {
     this.formProfile = new FormGroup({
       partida: new FormControl(''),
       destino: new FormControl(''),
