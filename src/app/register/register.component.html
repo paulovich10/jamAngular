@@ -31,13 +31,19 @@
                     <div class="form-group">
 
                         <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos">
+                        <p class="error"
+                            *ngIf="formulario.controls['apellidos'].errors?.required && formulario.controls['apellidos'].touched">
+                            El campo apellido es requerido
+                        </p>
                     </div>
                     <div class="form-group">
-
                         <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                        <p class="error"
+                            *ngIf="formulario.controls['email'].errors?.required && formulario.controls['email'].touched">
+                            El campo email es requerido
+                        </p>
                     </div>
                     <div class="form-group">
-
                         <input type="date" class="form-control" formControlName="fecha_nacimiento"
                             placeholder="Fecha de nacimiento">
                     </div>

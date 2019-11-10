@@ -27,3 +27,9 @@ input[type=submit] {
   margin: 0 auto;
   
 }
+
+p {
+
+  color: red;
+  font-size: .7rem;
+}

@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  formulario: FormGroup
+  formulario: FormGroup;
+  edad: Date;
 
   constructor(public conductoresService: ConductoresService, private router: Router) {
     this.formulario = new FormGroup({
@@ -26,7 +27,8 @@ export class RegisterComponent implements OnInit {
       ]),
       fecha_nacimiento: new FormControl(''),
       email: new FormControl('', [
-        Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)
+        Validators.pattern(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/),
+        this.validacionEdad()
       ]
       ),
       usuario: new FormControl('', [
@@ -66,6 +68,12 @@ export class RegisterComponent implements OnInit {
         console.log(err)
         alert('Error en el registro. Inténtalo más tarde. 2');
       });
+  }
+
+  validacionEdad(control) {
+    this.edad = control.value
+    console.log(this.edad);
+
   }
 
 
